@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: 'Quicksand', sans-serif;
+ 
+  height: 100vh;
+  margin: 0;
+}
+
+header{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-inline: auto;
+    background-color:#3C3D37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    z-index: 9999;
+}
+
+header .logo{
+    background-color: 3C3D37;
+    color:blur;
+}
+
+header .logo img{
+    width:200px;
+    height:auto;
+}
+
+header nav ul{
+    display:flex;
+    justify-content:center;
+    gap:2rem 1rem;
+}
+
+header nav ul li{
+    list-style-type:none;
+}
+
+header nav ul li a{
+    padding:0.5rem 1rem;
+    text-decoration:none;
+    color:white;
+}
+
