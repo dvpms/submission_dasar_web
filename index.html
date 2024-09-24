@@ -4,23 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Dasar Web</title>
-
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./img/DEV.svg" alt="">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="navbar-container">
+            <div class="logo">
+                <img src="./img/DEV.svg" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+        <section id="home">
+            <h4>Hello & Welcome</h4>
+            <h1><span id="text"></span></h1>
+            <ul>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </section>
+        <div class="page-content">
+            <div class="content">
+                <article class="card">
+                    <h2>IconicVibes</h2>
+                    <img src="./img/image1.png" alt="">
+                    <p>"IconicVibes" adalah sebuah proyek website online shop yang menampilkan koleksi produk baju, celana, topi, cincin, dan sepatu.
+                    </p>
+                </article>
+                <article class="card">
+                    <h2>Kemas.Id</h2>
+                    <img src="./img/image2.png" alt="">
+                    <p>
+                        Platform digital yang dirancang untuk meningkatkan kualitas hidup masyarakat melalui berbagai layanan dan fitur. Aplikasi ini bertujuan untuk menjadi jembatan penghubung antara masyarakat dengan berbagai sumber daya dan bantuan yang dapat mendukung dan memudahkan pelayanan Masyarakat di lingkungan RT. Proyek ini dibuat sebagai tugas akhir program MSIB.
+                    </p>
+                </article>
+            </div>
+            <aside>
+                <article class="profile card">
+                    <h2>Devran Perdana Malik</h2>
+                    <img src="./img/Devran.png" alt="">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, laborum culpa explicabo libero, quidem voluptatibus quos eos autem doloremque ipsam labore quis?</p>
+                </article>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <p>Belajar Dasar Pemrograman Web | Devran &#169; 2024</p>
+    </footer>
+    <script>
+        const textElement = document.getElementById('text');
+        const texts = ['Devran.', ' A Developer.'];
+        const typingText = 'I Am ';
+        let textIndex = 0;
+        let charIndex = 0;
+        let speed = 80; // kecepatan mengetik (dalam milisecond)
+
+        function typeText() {
+        textElement.innerHTML = typingText;
+        charIndex = 0;
+        if (textIndex < texts.length) {
+            let textToType = texts[textIndex];
+            let typingInterval = setInterval(function() {
+            textElement.innerHTML = typingText + textToType.substring(0, charIndex);
+            charIndex++;
+            if (charIndex >= textToType.length) {
+                clearInterval(typingInterval);
+                textIndex++;
+                if (textIndex >= texts.length) {
+                textIndex = 0;
+                }
+                setTimeout(function() {
+                typeText();
+                }, 2000);
+            }
+            }, speed);
+        }
+        }
+
+        typeText();
+    </script>
 </body>
 </html>
