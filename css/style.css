@@ -21,9 +21,6 @@ header{
     top:0;
     z-index: 9999;
 }
-.navbar-continer{
-
-}
 
 header .logo{
     background-color: 3C3D37;
@@ -76,7 +73,6 @@ main .content {
     background-size: cover;
     background-position: center;
     height: 100vh; /* atau tinggi yang diinginkan */
-    opacity:0.95;
 }
 
 #home h4, h1{
@@ -97,6 +93,7 @@ main .content {
 #home ul{
     display:flex;
     column-gap:1.5rem;
+    padding:0;
 }
 
 #home li{
@@ -123,15 +120,17 @@ main .content {
 
 }
 
-  .content article{
+.content article{
     display:flex;
     flex-flow: column wrap;
+    flex:auto;
     padding: 20px;
     row-gap:1.5rem;
 }
 
 article img {
     width: 500px;
+    min-width:auto;
     height:auto;
     margin:auto;
 }
@@ -144,7 +143,9 @@ aside{
 
 .profile img {
     width: 200px;
+    min-width:auto;
     height:auto;
+
 }
 
 footer{
@@ -152,4 +153,15 @@ footer{
     color:white;
     background-color:#595959;
     padding-block:5px;
+}
+
+@media screen and (max-width: 768px){
+    .page-content{
+        flex-direction:column;    
+    }
+
+    .page-content .content, aside{
+        width:100%;
+        margin:0;
+    }
 }
